@@ -19,6 +19,9 @@ jobs:
       - name: Extract Android project
         run: unzip -oq MercsLairGithub_Bundle.zip -d .
 
+      - name: Fix Android string resource escaping
+        run: sed -i "s/Merc's Lair/Mercs Lair/g" app/src/main/res/values/strings.xml
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
