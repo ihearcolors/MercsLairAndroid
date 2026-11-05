@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Extract Android project
-        run: unzip -oq MercsLairGithub_Bundle.zip -d .
+        run: unzip -oq MercsLairGithub_Bundle_v02.zip -d .
 
       - name: Fix Android string resource escaping
         run: sed -i "s/Merc's Lair/Mercs Lair/g" app/src/main/res/values/strings.xml
@@ -49,6 +49,6 @@ jobs:
         uses: actions/upload-artifact@v4
         if: success()
         with:
-          name: Mercs-Lair-APK
+          name: Mercs-Lair-v02-APK
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
